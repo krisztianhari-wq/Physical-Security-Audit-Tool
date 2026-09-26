@@ -7,6 +7,7 @@ Physical security audit tool by <img src="src/assets/sadrobot.png" width="22" al
 85 physical security requirements in 10 domains, mapped to **ISO 27001** clauses, **ISO 27002 / Annex A** controls, **NIST SP 800-53 r5** and **ASIS PAP-2021**. At the end of every audit the app creates a PDF report and an Excel workbook that you can save on your own device.
 
 **Web app (PWA):** https://krisztianhari-wq.github.io/Physical-Security-Audit-Tool/
+
 **Installers (macOS, Windows, Android):** [Releases](https://github.com/krisztianhari-wq/Physical-Security-Audit-Tool/releases)
 
 ## Features
