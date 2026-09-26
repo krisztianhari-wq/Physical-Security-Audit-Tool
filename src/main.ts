@@ -1,4 +1,6 @@
 import './styles.css';
+import appIcon from './assets/app-icon.png';
+import srIcon from './assets/sadrobot.png';
 import { D, FW, FWK, DOM, REQ, IDX, CTRL_ORDER, type FwKey } from './data';
 import { t, stLabel, domShort, auditStatusLabel, getLang, setLang, type Status } from './i18n';
 import {
@@ -11,8 +13,9 @@ import { saveFile, pickFile, dialog, confirmDialog, messageDialog, promptDialog,
 
 declare const __APP_VERSION__: string;
 
-type View = 'list' | 'audit';
-let view: View = 'list';
+type View = 'home' | 'list' | 'audit';
+const introSeen = (): boolean => { try { return localStorage.getItem('psa.intro') === '1'; } catch { return false; } };
+let view: View = introSeen() ? 'list' : 'home';
 let cur: Audit | null = null;
 const S = { fw: 'c2' as FwKey, ctl: null as null | { fw: FwKey; id: string }, dom: '', st: '*', q: '', req: null as string | null };
 const L = { q: '', st: '' as '' | 'open' | 'closed' };
@@ -50,13 +53,34 @@ const today = () => new Date().toISOString().slice(0, 10);
 function topbar(): string {
   const me = getMe();
   return `<header class="topbar"><div class="topbar-in">
-    <div class="brand"><div class="dot">sr</div><div><b>${esc(t('appName'))}</b><span>sadrobot · v${__APP_VERSION__}</span></div></div>
+    <button type="button" class="brand" data-act="home" title="${esc(t('homeTitle'))}"><img class="appicon" src="${appIcon}" alt=""><div><b>${esc(t('appName'))}</b><span>${esc(t('appTag'))}</span></div></button>
     <div class="spacer"></div>
     <button type="button" class="btn ghost sm" data-act="me" title="${esc(t('yourNameHint'))}">${me ? esc(t('you')) + ': ' + esc(me) : esc(t('setName'))}</button>
     <button type="button" class="btn ghost sm" data-act="backup">${esc(t('backup'))}</button>
-    <button type="button" class="btn ghost sm" data-act="help">${esc(t('help'))}</button>
+    <button type="button" class="btn ghost sm" data-act="home">${esc(t('help'))}</button>
     <button type="button" class="btn sm" data-act="lang">${esc(t('lang'))}</button>
   </div></header>`;
+}
+
+const foot = () => `<footer class="foot"><img class="sricon" src="${srIcon}" alt=""><span>sadrobot · PhySec Audit v${__APP_VERSION__}</span></footer>`;
+
+// ---------- start page ----------
+function renderHome(): void {
+  const has = listAudits().length > 0;
+  const step = (n: number, h: string, p: string) => `<li class="card step"><span class="num">${n}</span><div><h3>${esc(h)}</h3><p>${esc(p)}</p></div></li>`;
+  app.innerHTML = topbar() + `<main class="home">
+    <section class="hero">
+      <img class="hero-icon" src="${appIcon}" alt="">
+      <div><h1>PhySec Audit</h1><p class="lead">${esc(t('homeLead'))}</p>
+        <button type="button" class="btn primary big" data-act="start">${esc(has ? t('homeContinue') : t('homeStart'))} →</button></div>
+    </section>
+    <h2 class="home-h">${esc(t('homeHow'))}</h2>
+    <ol class="steps">
+      ${step(1, t('homeS1'), t('homeS1p'))}${step(2, t('homeS2'), t('homeS2p'))}${step(3, t('homeS3'), t('homeS3p'))}${step(4, t('homeS4'), t('homeS4p'))}
+    </ol>
+    <section class="card privacy"><h3>${esc(t('homePrivacy'))}</h3><p>${esc(t('homePrivacyP'))}</p></section>
+    <p class="made"><img class="sricon" src="${srIcon}" alt="">${esc(t('homeMade'))}</p>
+  </main>${foot()}`;
 }
 
 // ---------- list view ----------
@@ -81,7 +105,7 @@ function renderList(): void {
     <div class="tools"><input class="q" type="search" id="lq" value="${esc(L.q)}" placeholder="${esc(t('search'))}" aria-label="${esc(t('search'))}">
       ${chip('', t('all'))}${chip('open', t('open'))}${chip('closed', t('closed'))}</div>
     <div class="agrid">${cards || `<p class="empty">${esc(all.length ? t('noMatch') : t('noAudits'))}</p>`}</div>
-  </main><footer class="foot">${esc(t('footer'))} · v${__APP_VERSION__}</footer>`;
+  </main>${foot()}`;
 }
 
 // ---------- audit view: three tabs (requirements, control map, summary) ----------
@@ -124,7 +148,7 @@ function renderAudit(): void {
     ${isClosed() ? `<div class="banner">${esc(t('closedBanner'))}</div>` : ''}
     <nav class="vtabs" role="tablist">${tabBtn('req', t('requirements'))}${tabBtn('map', t('controlMap'))}${tabBtn('sum', t('summary'))}</nav>
     <div id="tabBody"></div>
-  </main><footer class="foot">${esc(t('footer'))} · v${__APP_VERSION__}</footer>`;
+  </main>${foot()}`;
   renderTab();
 }
 
@@ -257,7 +281,7 @@ function refreshDetail(): void {
   $('dMeta').textContent = noteDirty ? t('unsaved') : x?.updatedAt ? `${t('updated')}: ${fmtAgo(x.updatedAt)}${x.updatedBy ? ' · ' + x.updatedBy : ''}` : t('notAssessedYet');
 }
 
-function render(): void { if (view === 'audit' && cur) renderAudit(); else renderList(); }
+function render(): void { if (view === 'audit' && cur) renderAudit(); else if (view === 'home') renderHome(); else renderList(); }
 
 // ---------- writes ----------
 async function ensureName(): Promise<void> {
@@ -393,7 +417,8 @@ document.addEventListener('click', async (e) => {
   if (act === 'lang') { setLang(getLang() === 'hu' ? 'en' : 'hu'); render(); return; }
   if (act === 'me') { const n = await promptDialog(t('yourName'), t('yourName'), getMe(), t('yourNameHint')); if (n !== null) { setMe(n); render(); } return; }
   if (act === 'backup') { await backupDialog(); return; }
-  if (act === 'help') { await messageDialog(t('help'), t('helpText')); return; }
+  if (act === 'home') { if (noteDirty && !(await confirmDialog(t('unsaved'), t('discardNotes'), t('discard')))) return; noteDirty = false; view = 'home'; render(); window.scrollTo(0, 0); return; }
+  if (act === 'start') { try { localStorage.setItem('psa.intro', '1'); } catch { /* ignore */ } view = cur ? 'audit' : 'list'; render(); window.scrollTo(0, 0); return; }
   if (act === 'new') { await auditForm(null); return; }
   if (tgt.dataset.open) { cur = getAudit(tgt.dataset.open); Object.assign(S, { ctl: null, dom: '', st: '*', q: '', req: null }); tab = cur?.status === 'closed' ? 'sum' : 'req'; view = 'audit'; render(); window.scrollTo(0, 0); return; }
   if (tgt.dataset.lst !== undefined) { L.st = tgt.dataset.lst as typeof L.st; renderList(); return; }

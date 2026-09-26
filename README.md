@@ -1,6 +1,8 @@
+<img src="src/assets/app-icon.png" width="96" alt="PhySec Audit icon">
+
 # PhySec Audit
 
-Physical security audit tool by **sadrobot**.
+Physical security audit tool by <img src="src/assets/sadrobot.png" width="22" alt=""> **sadrobot**.
 
 85 physical security requirements in 10 domains, mapped to **ISO 27001** clauses, **ISO 27002 / Annex A** controls, **NIST SP 800-53 r5** and **ASIS PAP-2021**. At the end of every audit the app creates a PDF report and an Excel workbook that you can save on your own device.
 
@@ -18,6 +20,7 @@ Physical security audit tool by **sadrobot**.
   - **Excel workbook** with two sheets: *Assessment* (all 85 requirements with the assessment and the framework mappings) and *Summary* (audit details and totals).
 - **Import:** read an Excel or CSV file back with a merge (the newer entry wins; rows edited directly in Excel are taken over).
 - **Backup and restore:** all audits in one JSON file, which can be restored on another device.
+- **Start page** that explains the tool and the four steps in plain words.
 - **Hungarian and English UI**, light and dark mode, from phone to desktop.
 
 ## Privacy
@@ -54,5 +57,7 @@ npx tauri ios init && npx tauri ios build
 - CI: `pages.yml` deploys the PWA on every push to `main`; `release.yml` builds the macOS, Windows and Android installers on `v*` tags.
 
 ## License
+
+<img src="src/assets/sadrobot.png" width="40" alt="sadrobot">
 
 MIT © 2026 sadrobot

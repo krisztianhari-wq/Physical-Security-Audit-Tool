@@ -30,6 +30,25 @@ h1,h2,h3{margin:0;text-wrap:balance}
 .topbar{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--solid) 72%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
 .topbar-in{max-width:1440px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;margin-right:6px}
+.brand{border:0;background:none;padding:0;cursor:pointer;color:var(--ink);text-align:left;font:inherit}
+.appicon{width:34px;height:34px;border-radius:9px;display:block;box-shadow:0 1px 2px rgba(0,0,0,.15)}
+.sricon{width:22px;height:22px;border-radius:6px;vertical-align:middle}
+.foot{display:flex;align-items:center;gap:8px}
+.home{max-width:980px}
+.hero{display:flex;gap:28px;align-items:center;margin:14px 0 30px;flex-wrap:wrap}
+.hero-icon{width:132px;height:132px;border-radius:30px;box-shadow:0 18px 40px -18px rgba(27,39,51,.55)}
+.hero h1{font-size:38px}
+.hero .lead{font-size:16.5px;color:var(--ink-2);max-width:620px;margin:8px 0 18px;line-height:1.55}
+.btn.big{padding:12px 22px;font-size:15px;border-radius:12px;flex-direction:row}
+.home-h{font-size:18px;margin:0 0 12px}
+.steps{list-style:none;padding:0;margin:0 0 18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.step{display:flex;gap:14px;padding:16px}
+.step .num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--brand);color:var(--bg);display:grid;place-items:center;font-weight:700}
+.step h3{font-size:15px;margin-bottom:4px}.step p{margin:0;color:var(--ink-2)}
+.privacy{padding:16px;background:var(--ok-bg)}.privacy h3{font-size:15px;margin-bottom:4px}.privacy p{margin:0}
+.made{display:flex;align-items:center;gap:10px;color:var(--ink-3);margin-top:18px}
+.made .sricon{width:34px;height:34px;border-radius:9px}
+@media (max-width:640px){.steps{grid-template-columns:1fr}.hero{gap:16px}.hero-icon{width:92px;height:92px;border-radius:22px}.hero h1{font-size:30px}}
 .brand .dot{width:32px;height:32px;border-radius:10px;background:var(--brand);color:var(--bg);display:grid;place-items:center;font-weight:700;font-size:13px;letter-spacing:-.02em}
 .brand b{display:block;font-weight:650;font-size:16px;line-height:1.1}.brand span{display:block;font-size:11px;color:var(--ink-3)}
 main{max-width:1240px;margin:0 auto;padding:24px 24px 40px;width:100%}
@@ -217,6 +236,7 @@ select.st-n{background:var(--bad-bg);border-color:var(--bad)}select.st-x{backgro
 .rep .r-page{width:1123px;height:794px;position:relative;overflow:hidden;background:#fff;padding:0 34px 40px;display:flex;flex-direction:column;gap:12px}
 .rep .r-head{display:flex;align-items:center;gap:18px;background:#1B2733;color:#fff;margin:0 -34px;padding:14px 34px;border-bottom:4px solid #BFDCF5}
 .rep .r-brand{display:flex;align-items:center;gap:10px}
+.rep .r-icon{width:34px;height:34px;border-radius:9px}
 .rep .r-dot{width:30px;height:30px;border-radius:9px;background:#2F6497;color:#F5F9FD;display:grid;place-items:center;font-weight:700;font-size:12px}
 .rep .r-brand b{display:block;font-size:15px}.rep .r-brand small{display:block;color:#A9BBCC;font-size:10px}
 .rep .r-subj{flex:1;font-size:15px;font-weight:700;color:#BFDCF5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}

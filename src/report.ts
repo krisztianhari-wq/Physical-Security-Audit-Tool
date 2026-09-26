@@ -6,6 +6,7 @@ import { D, DOM, REQ } from './data';
 import { t, stLabel, domShort, auditStatusLabel, getLang, type Status } from './i18n';
 import { counts, getMe, type Audit } from './store';
 import { esc } from './platform';
+import appIcon from './assets/app-icon.png';
 
 const PAGE_W = 1123, PAGE_H = 794; // A4 landscape at 96 dpi
 const ORDER: Status[] = ['n', 'p', 'c', 'x', ''];
@@ -18,7 +19,7 @@ function seg(c: ReturnType<typeof counts>): string {
 }
 
 function header(a: Audit): string {
-  return `<div class="r-head"><div class="r-brand"><span class="r-dot">sr</span><div><b>${esc(t('reportTitle'))}</b><small>sadrobot · PhySec Audit</small></div></div>
+  return `<div class="r-head"><div class="r-brand"><img class="r-icon" src="${appIcon}" alt=""><div><b>${esc(t('reportTitle'))}</b><small>sadrobot · PhySec Audit</small></div></div>
     <div class="r-subj">${esc(a.subject)}</div><div class="r-class">${esc(t('confidential'))}</div></div>`;
 }
 
