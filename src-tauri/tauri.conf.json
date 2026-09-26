@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "PhySec Audit",
+  "version": "0.1.0",
+  "identifier": "io.github.krisztianhari.physecaudit",
+  "build": {
+    "beforeDevCommand": "npm run dev -- --port 5178 --strictPort",
+    "devUrl": "http://localhost:5178",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      { "title": "PhySec Audit", "width": 1360, "height": 900, "minWidth": 900, "minHeight": 620, "center": true }
+    ],
+    "security": {
+      "csp": {
+        "default-src": "'self'",
+        "script-src": "'self'",
+        "style-src": "'self' 'unsafe-inline'",
+        "img-src": "'self' data: blob: asset: http://asset.localhost",
+        "font-src": "'self' data:",
+        "connect-src": "'self' ipc: http://ipc.localhost",
+        "object-src": "'none'",
+        "base-uri": "'self'",
+        "frame-ancestors": "'none'"
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["dmg", "nsis", "msi"],
+    "category": "Business",
+    "copyright": "© 2026 sadrobot",
+    "shortDescription": "Physical security audit tool",
+    "longDescription": "PhySec Audit – physical security audits against ISO 27001, ISO 27002 / Annex A, NIST SP 800-53 r5 and ASIS PAP-2021. PDF report and Excel workbook at the end of each audit. Data stays on the device. UI in Hungarian and English.",
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"],
+    "macOS": { "minimumSystemVersion": "10.15" },
+    "windows": { "nsis": { "installMode": "currentUser", "languages": ["Hungarian", "English"] } },
+    "iOS": { "minimumSystemVersion": "15.0" },
+    "android": { "minSdkVersion": 24 }
+  }
+}

@@ -1,0 +1,34 @@
+[package]
+name = "physec-audit"
+version = "0.1.0"
+description = "PhySec Audit – physical security audit tool"
+authors = ["sadrobot"]
+license = "MIT"
+edition = "2021"
+
+[lib]
+name = "physec_audit_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true
+
+# tao 0.35.3 + the one-line fix from tauri-apps/tao#1245 (use-after-free in
+# configurationForConnectingSceneSession). iOS 27 requires UIApplicationSceneManifest,
+# and with the manifest release builds of unpatched tao 0.35 crash on launch.
+# Remove once tauri-runtime-wry depends on tao >= 0.36.
+[patch.crates-io]
+tao = { path = "vendor/tao" }

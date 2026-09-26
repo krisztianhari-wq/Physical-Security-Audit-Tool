@@ -1,0 +1,2128 @@
+{
+ "domains": [
+  {
+   "code": "GOV",
+   "short": "Governance & risk",
+   "full": "Physical Security Governance and Risk Management (organisation / service provider RACI)"
+  },
+  {
+   "code": "PER",
+   "short": "Perimeter security",
+   "full": "Perimeter security - physical barrier, intrusion detection, alarms, surveillance and monitoring, lighting, emergency lighting"
+  },
+  {
+   "code": "ACC",
+   "short": "Access control",
+   "full": "Access Control (incl. visitors, logging)"
+  },
+  {
+   "code": "ENV",
+   "short": "Environmental protection",
+   "full": "Environment protection (fire, water, emergency exits, temperature)"
+  },
+  {
+   "code": "SEC",
+   "short": "Security personnel",
+   "full": "Security personnel, inc. training"
+  },
+  {
+   "code": "AST",
+   "short": "Asset protection",
+   "full": "Asset protection (lifecycle)"
+  },
+  {
+   "code": "INC",
+   "short": "Incident & emergency",
+   "full": "Incident mgmt and Emergency Preparaness (BCM, incident, disaster, testing)"
+  },
+  {
+   "code": "CHG",
+   "short": "Change management",
+   "full": "Change management (testing)"
+  },
+  {
+   "code": "SUB",
+   "short": "Subcontractors",
+   "full": "Subcontractor management"
+  },
+  {
+   "code": "HOS",
+   "short": "Hosting",
+   "full": "Hosting management"
+  }
+ ],
+ "reqs": [
+  {
+   "id": "GOV-01",
+   "d": "GOV",
+   "t": "Physical Security Policy review periodically? Organisational composition, manpower, etc.",
+   "c1": [
+    "5.1",
+    "5.2",
+    "7.1",
+    "9.3"
+   ],
+   "c2": [
+    "5.1",
+    "5.4"
+   ],
+   "n": [
+    "PE-1",
+    "PM-1",
+    "PM-3"
+   ],
+   "a": [
+    "GOV",
+    "RES",
+    "MR"
+   ],
+   "note": "Policy review cadence and resourcing (manpower) are ISMS clause topics; 27002 5.1 requires planned-interval review."
+  },
+  {
+   "id": "GOV-02",
+   "d": "GOV",
+   "t": "Roles, responsibilities, accountabilities defined and communicated",
+   "c1": [
+    "5.3",
+    "7.4"
+   ],
+   "c2": [
+    "5.2",
+    "5.3",
+    "5.4"
+   ],
+   "n": [
+    "PM-2",
+    "PM-29",
+    "PS-9",
+    "PE-1"
+   ],
+   "a": [
+    "ROLE",
+    "COM"
+   ],
+   "note": ""
+  },
+  {
+   "id": "GOV-03",
+   "d": "GOV",
+   "t": "PHYSEC risk assessment, action plans, review intervals, risks documented, tracked, assigned treatment plans",
+   "c1": [
+    "6.1.1",
+    "6.1.2",
+    "6.1.3",
+    "8.2",
+    "8.3"
+   ],
+   "c2": [
+    "5.7",
+    "7.5"
+   ],
+   "n": [
+    "RA-1",
+    "RA-3",
+    "RA-7",
+    "PM-9",
+    "PM-4",
+    "CA-5"
+   ],
+   "a": [
+    "RISK",
+    "TREAT"
+   ],
+   "note": "Annex A has no standalone risk-assessment control – the risk process sits in clauses 6.1 / 8.2 / 8.3."
+  },
+  {
+   "id": "GOV-04",
+   "d": "GOV",
+   "t": "Audits, regulatory and contractual compliance, monitoring",
+   "c1": [
+    "4.2",
+    "9.1",
+    "9.2"
+   ],
+   "c2": [
+    "5.31",
+    "5.35",
+    "5.36"
+   ],
+   "n": [
+    "CA-2",
+    "CA-7",
+    "PM-31"
+   ],
+   "a": [
+    "CTX",
+    "AUD",
+    "EVAL"
+   ],
+   "note": ""
+  },
+  {
+   "id": "GOV-05",
+   "d": "GOV",
+   "t": "RACI",
+   "c1": [
+    "5.3"
+   ],
+   "c2": [
+    "5.2",
+    "5.3",
+    "5.20"
+   ],
+   "n": [
+    "PM-29",
+    "PS-9",
+    "SA-9"
+   ],
+   "a": [
+    "ROLE",
+    "SUP"
+   ],
+   "note": "Organisation / service provider split: shared responsibilities should also be anchored in the inter-company agreement (5.20 / SA-9)."
+  },
+  {
+   "id": "PER-01",
+   "d": "PER",
+   "t": "Perimeter barriers (walls, gates, etc.) implemented according to defined security standard",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.1"
+   ],
+   "n": [
+    "PE-3",
+    "PE-3(7)"
+   ],
+   "a": [
+    "BAR"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PER-02",
+   "d": "PER",
+   "t": "Perimeters regularly inspected and maintained",
+   "c1": [
+    "9.1"
+   ],
+   "c2": [
+    "7.1",
+    "7.13"
+   ],
+   "n": [
+    "PE-3",
+    "CA-7"
+   ],
+   "a": [
+    "BAR",
+    "EVAL"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PER-03",
+   "d": "PER",
+   "t": "Intrusion detection systems installed at critical perimeter points",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.4"
+   ],
+   "n": [
+    "PE-6(1)",
+    "PE-6(2)"
+   ],
+   "a": [
+    "IDS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PER-04",
+   "d": "PER",
+   "t": "Intrusion alerts monitored in real time and escalated according to procedure",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.4",
+    "5.25",
+    "6.8"
+   ],
+   "n": [
+    "PE-6",
+    "PE-6(1)",
+    "IR-4",
+    "IR-6"
+   ],
+   "a": [
+    "MON",
+    "EMER"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PER-05",
+   "d": "PER",
+   "t": "Alarms systems tested regularly to confirm operational effectiveness",
+   "c1": [
+    "9.1"
+   ],
+   "c2": [
+    "7.4"
+   ],
+   "n": [
+    "PE-6(1)",
+    "CA-7",
+    "CA-8(3)"
+   ],
+   "a": [
+    "IDS",
+    "EVAL"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PER-06",
+   "d": "PER",
+   "t": "Alarm activations logged, investigated, etc.",
+   "c1": [
+    "7.5.3"
+   ],
+   "c2": [
+    "7.4",
+    "5.25",
+    "5.26"
+   ],
+   "n": [
+    "PE-6",
+    "IR-4",
+    "IR-5"
+   ],
+   "a": [
+    "MON",
+    "DOC"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PER-07",
+   "d": "PER",
+   "t": "Surveillance systems installed covering critical perimeter and entry points",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.4"
+   ],
+   "n": [
+    "PE-6(3)"
+   ],
+   "a": [
+    "VSS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PER-08",
+   "d": "PER",
+   "t": "Recording retention according to policy and regulatory requirements",
+   "c1": [
+    "4.2",
+    "7.5.3"
+   ],
+   "c2": [
+    "7.4",
+    "5.33",
+    "5.34"
+   ],
+   "n": [
+    "PE-6(3)",
+    "SI-12",
+    "AU-11"
+   ],
+   "a": [
+    "VSS",
+    "DOC",
+    "CTX"
+   ],
+   "note": "CCTV footage is personal data: retention must satisfy GDPR and the Hungarian property-protection act (Szvtv.) – verify current limits with Legal/DPO."
+  },
+  {
+   "id": "PER-09",
+   "d": "PER",
+   "t": "Surveillance footage actively monitored and periodically reviewed",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.4"
+   ],
+   "n": [
+    "PE-6",
+    "PE-6(3)"
+   ],
+   "a": [
+    "MON",
+    "VSS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "PER-10",
+   "d": "PER",
+   "t": "Perimeter lighting sufficient to detect unauthorized access during low-light conditions",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.1",
+    "7.4"
+   ],
+   "n": [
+    "PE-3"
+   ],
+   "a": [
+    "LGT"
+   ],
+   "note": "Partial coverage: neither ISO 27002 nor NIST 800-53 specifies security lighting – ASIS PAP is the primary reference."
+  },
+  {
+   "id": "PER-11",
+   "d": "PER",
+   "t": "Lighting systems regularly inspected and maintained",
+   "c1": [
+    "9.1"
+   ],
+   "c2": [
+    "7.1",
+    "7.13"
+   ],
+   "n": [
+    "PE-3"
+   ],
+   "a": [
+    "LGT",
+    "EVAL"
+   ],
+   "note": "Partial coverage in ISO/NIST (see above)."
+  },
+  {
+   "id": "PER-12",
+   "d": "PER",
+   "t": "Emergency lighting tested and documented",
+   "c1": [
+    "7.5.3",
+    "9.1"
+   ],
+   "c2": [
+    "7.11"
+   ],
+   "n": [
+    "PE-12"
+   ],
+   "a": [
+    "LIFE",
+    "EVAL"
+   ],
+   "note": "Also a life-safety / fire-code (OTSZ) obligation."
+  },
+  {
+   "id": "ACC-01",
+   "d": "ACC",
+   "t": "Restricted access based on need-to-know and job role - security zones",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "5.15",
+    "5.18",
+    "7.2",
+    "7.3",
+    "7.6"
+   ],
+   "n": [
+    "PE-2",
+    "PE-2(1)",
+    "PE-3",
+    "AC-6"
+   ],
+   "a": [
+    "ACS",
+    "RISK"
+   ],
+   "note": "Security zones should derive from the PHYSEC risk assessment."
+  },
+  {
+   "id": "ACC-02",
+   "d": "ACC",
+   "t": "Access rights regular review + revoked accesses upon role change or termination",
+   "c1": [
+    "9.1"
+   ],
+   "c2": [
+    "5.18",
+    "6.5"
+   ],
+   "n": [
+    "PE-2",
+    "PS-4",
+    "PS-5"
+   ],
+   "a": [
+    "ACS"
+   ],
+   "note": "PE-2 requires periodic review of the access list and removal of individuals no longer requiring access."
+  },
+  {
+   "id": "ACC-03",
+   "d": "ACC",
+   "t": "Entry points controlled with approved authentication mechanisms",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.2",
+    "5.17"
+   ],
+   "n": [
+    "PE-3"
+   ],
+   "a": [
+    "ACS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ACC-04",
+   "d": "ACC",
+   "t": "Anti-tailgating measures implemented",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.2"
+   ],
+   "n": [
+    "PE-3(8)"
+   ],
+   "a": [
+    "ACS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ACC-05",
+   "d": "ACC",
+   "t": "Visitor registration (temporary/visitor badges??) - clear differentiation",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.2"
+   ],
+   "n": [
+    "PE-3",
+    "PE-8"
+   ],
+   "a": [
+    "ACS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ACC-06",
+   "d": "ACC",
+   "t": "Visitors verification (ID)",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.2"
+   ],
+   "n": [
+    "PE-3",
+    "PE-8"
+   ],
+   "a": [
+    "ACS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ACC-07",
+   "d": "ACC",
+   "t": "Visitor escort especially in restricted areas",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.2",
+    "7.6"
+   ],
+   "n": [
+    "PE-3",
+    "PE-2(3)"
+   ],
+   "a": [
+    "ACS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ACC-08",
+   "d": "ACC",
+   "t": "Visitor access approval + logging",
+   "c1": [
+    "7.5.3"
+   ],
+   "c2": [
+    "7.2"
+   ],
+   "n": [
+    "PE-8",
+    "PE-8(1)"
+   ],
+   "a": [
+    "ACS",
+    "DOC"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ACC-09",
+   "d": "ACC",
+   "t": "Physical access logs for all entry/exit",
+   "c1": [
+    "7.5.3"
+   ],
+   "c2": [
+    "7.2",
+    "7.4"
+   ],
+   "n": [
+    "PE-3",
+    "PE-6"
+   ],
+   "a": [
+    "ACS",
+    "DOC"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ACC-10",
+   "d": "ACC",
+   "t": "Access logs reviewed for unauthorized attempts",
+   "c1": [
+    "9.1"
+   ],
+   "c2": [
+    "7.4",
+    "8.16"
+   ],
+   "n": [
+    "PE-6",
+    "AU-6"
+   ],
+   "a": [
+    "MON"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ACC-11",
+   "d": "ACC",
+   "t": "Logs protected from unauthorized modification or deletion",
+   "c1": [
+    "7.5.3"
+   ],
+   "c2": [
+    "5.33",
+    "8.15"
+   ],
+   "n": [
+    "AU-9"
+   ],
+   "a": [
+    "DOC"
+   ],
+   "note": "8.15/AU-9 are IT-logging controls but apply directly to electronic access-control-system logs."
+  },
+  {
+   "id": "ENV-01",
+   "d": "ENV",
+   "t": "Fire detection and suppression systems in all critical areas",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.5",
+    "7.8"
+   ],
+   "n": [
+    "PE-13",
+    "PE-13(1)",
+    "PE-13(2)"
+   ],
+   "a": [
+    "LIFE"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ENV-02",
+   "d": "ENV",
+   "t": "Fire systems inspected and tested according to policy, regulatory requirements",
+   "c1": [
+    "4.2",
+    "9.1"
+   ],
+   "c2": [
+    "7.5",
+    "7.13"
+   ],
+   "n": [
+    "PE-13(4)"
+   ],
+   "a": [
+    "LIFE",
+    "EVAL",
+    "CTX"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ENV-03",
+   "d": "ENV",
+   "t": "Fire evacuation procedures documented, communicated",
+   "c1": [
+    "7.4",
+    "7.5"
+   ],
+   "c2": [
+    "7.5",
+    "5.37"
+   ],
+   "n": [
+    "CP-2"
+   ],
+   "a": [
+    "LIFE",
+    "EMER",
+    "COM"
+   ],
+   "note": "Partial in NIST: occupant emergency planning is only referenced as a related plan to CP-2; driven by fire-code requirements."
+  },
+  {
+   "id": "ENV-04",
+   "d": "ENV",
+   "t": "Water leak detection systems installed in high-risk areas",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.5",
+    "7.8"
+   ],
+   "n": [
+    "PE-15",
+    "PE-15(1)"
+   ],
+   "a": [
+    "LIFE"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ENV-05",
+   "d": "ENV",
+   "t": "Protecting critical assets from flooding/water damage",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.5",
+    "7.8"
+   ],
+   "n": [
+    "PE-15",
+    "PE-18",
+    "PE-23"
+   ],
+   "a": [
+    "RISK",
+    "LIFE"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ENV-06",
+   "d": "ENV",
+   "t": "Emergency exits clearly marked, accessible and unobstructed",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.5"
+   ],
+   "n": [],
+   "a": [
+    "LIFE"
+   ],
+   "note": "Gap in ISO/NIST (life-safety topic) – reference national fire code (OTSZ) and ASIS life-safety integration."
+  },
+  {
+   "id": "ENV-07",
+   "d": "ENV",
+   "t": "Emergency evacuation routes regularly reviewed and tested",
+   "c1": [
+    "9.1"
+   ],
+   "c2": [
+    "7.5"
+   ],
+   "n": [
+    "CP-4"
+   ],
+   "a": [
+    "LIFE",
+    "EMER",
+    "EVAL"
+   ],
+   "note": "Partial coverage in ISO/NIST."
+  },
+  {
+   "id": "ENV-08",
+   "d": "ENV",
+   "t": "Environmental controls (e.g. HVAC) in place to maintain safe operating conditions",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.5",
+    "7.8",
+    "7.11"
+   ],
+   "n": [
+    "PE-14"
+   ],
+   "a": [
+    "LIFE"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ENV-09",
+   "d": "ENV",
+   "t": "Temperature and humidity-level monitoring in critical areas",
+   "c1": [
+    "9.1"
+   ],
+   "c2": [
+    "7.8",
+    "7.11"
+   ],
+   "n": [
+    "PE-14"
+   ],
+   "a": [
+    "MON"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ENV-10",
+   "d": "ENV",
+   "t": "Alerts for environmental threshold breaches",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.11",
+    "8.16"
+   ],
+   "n": [
+    "PE-14(2)"
+   ],
+   "a": [
+    "MON"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ENV-11",
+   "d": "ENV",
+   "t": "Subcontractor tasks and roles in environmental protection",
+   "c1": [
+    "5.3",
+    "8.1"
+   ],
+   "c2": [
+    "5.2",
+    "5.19",
+    "5.20",
+    "5.22"
+   ],
+   "n": [
+    "SA-9",
+    "PS-7"
+   ],
+   "a": [
+    "SUP",
+    "ROLE"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SEC-01",
+   "d": "SEC",
+   "t": "Security personnel background check/screening before assignment",
+   "c1": [
+    "7.2"
+   ],
+   "c2": [
+    "6.1"
+   ],
+   "n": [
+    "PS-2",
+    "PS-3",
+    "PS-7"
+   ],
+   "a": [
+    "PER",
+    "RES"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SEC-02",
+   "d": "SEC",
+   "t": "Roles, responsibilities, escalation procedures clearly communicated, documented for security staff",
+   "c1": [
+    "5.3",
+    "7.5"
+   ],
+   "c2": [
+    "5.2",
+    "5.37",
+    "6.2"
+   ],
+   "n": [
+    "PS-9",
+    "PE-1",
+    "IR-8"
+   ],
+   "a": [
+    "PER",
+    "ROLE",
+    "DOC"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SEC-03",
+   "d": "SEC",
+   "t": "Tasks for security personnel",
+   "c1": [
+    "5.3",
+    "8.1"
+   ],
+   "c2": [
+    "5.2",
+    "5.37"
+   ],
+   "n": [
+    "PS-9",
+    "PE-3(3)"
+   ],
+   "a": [
+    "PER",
+    "OPS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SEC-04",
+   "d": "SEC",
+   "t": "Security guards present at defined risk points and operational hours",
+   "c1": [
+    "6.1.3",
+    "8.1"
+   ],
+   "c2": [
+    "7.1",
+    "7.4"
+   ],
+   "n": [
+    "PE-3(3)",
+    "PE-6"
+   ],
+   "a": [
+    "PER",
+    "RISK"
+   ],
+   "note": "Guard posts and hours should be justified by the risk assessment."
+  },
+  {
+   "id": "SEC-05",
+   "d": "SEC",
+   "t": "Patrols - regularly conducted and formally recorded",
+   "c1": [
+    "7.5.3"
+   ],
+   "c2": [
+    "7.4"
+   ],
+   "n": [
+    "PE-6",
+    "PE-3(3)"
+   ],
+   "a": [
+    "PER",
+    "DOC"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SEC-06",
+   "d": "SEC",
+   "t": "Secpersonnel trained on emergency response, access control and incident handling, etc.",
+   "c1": [
+    "7.2",
+    "7.3"
+   ],
+   "c2": [
+    "6.3",
+    "5.24"
+   ],
+   "n": [
+    "AT-3",
+    "IR-2",
+    "CP-3"
+   ],
+   "a": [
+    "RES",
+    "PER"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SEC-07",
+   "d": "SEC",
+   "t": "Security training periodic refreshment for up-to-dateness, attendance recorded",
+   "c1": [
+    "7.2",
+    "7.5.3"
+   ],
+   "c2": [
+    "6.3"
+   ],
+   "n": [
+    "AT-3",
+    "AT-4"
+   ],
+   "a": [
+    "RES",
+    "DOC"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SEC-08",
+   "d": "SEC",
+   "t": "Performance review, evaluation of effectiveness of security personnel",
+   "c1": [
+    "7.2",
+    "9.1"
+   ],
+   "c2": [
+    "6.3",
+    "5.22"
+   ],
+   "n": [
+    "PM-6",
+    "CA-7"
+   ],
+   "a": [
+    "EVAL",
+    "PER"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SEC-09",
+   "d": "SEC",
+   "t": "Subcontactor tasks and roles in security personnel role",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "5.19",
+    "5.20",
+    "5.22",
+    "6.1"
+   ],
+   "n": [
+    "PS-7",
+    "SA-4",
+    "SA-9"
+   ],
+   "a": [
+    "SUP",
+    "PER"
+   ],
+   "note": ""
+  },
+  {
+   "id": "AST-01",
+   "d": "AST",
+   "t": "Critical physical assets identified, classified and recorded in an inventory system",
+   "c1": [
+    "6.1.2",
+    "8.1"
+   ],
+   "c2": [
+    "5.9",
+    "5.12",
+    "5.13"
+   ],
+   "n": [
+    "CM-8",
+    "RA-2",
+    "RA-9"
+   ],
+   "a": [
+    "ASSET"
+   ],
+   "note": ""
+  },
+  {
+   "id": "AST-02",
+   "d": "AST",
+   "t": "Asset protection throughout lifecycle (procurement, use, storage, disposal)",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "5.9",
+    "5.10",
+    "5.11",
+    "7.8",
+    "7.10",
+    "7.14"
+   ],
+   "n": [
+    "CM-8",
+    "SA-4",
+    "MP-4",
+    "MP-6",
+    "SR-12"
+   ],
+   "a": [
+    "ASSET",
+    "OPS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "AST-03",
+   "d": "AST",
+   "t": "High-value assets physically secured against unauthorized access or theft",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.3",
+    "7.8"
+   ],
+   "n": [
+    "PE-3",
+    "PE-3(4)",
+    "PE-3(5)",
+    "PE-18"
+   ],
+   "a": [
+    "BAR",
+    "ACS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "AST-04",
+   "d": "AST",
+   "t": "Asset movement and relocation tracked, approved, secured",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.9",
+    "7.10",
+    "5.11"
+   ],
+   "n": [
+    "PE-16",
+    "PE-20",
+    "CM-8"
+   ],
+   "a": [
+    "ASSET",
+    "OPS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "AST-05",
+   "d": "AST",
+   "t": "Secure disposal methods used for sensitive or decommisioned equipment + data (on paper + digitally)",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.14",
+    "7.10",
+    "8.10"
+   ],
+   "n": [
+    "MP-6",
+    "SR-12"
+   ],
+   "a": [
+    "ASSET",
+    "OPS"
+   ],
+   "note": "Covers both paper and digital media."
+  },
+  {
+   "id": "AST-06",
+   "d": "AST",
+   "t": "Asset inventory verified periodically",
+   "c1": [
+    "9.1"
+   ],
+   "c2": [
+    "5.9"
+   ],
+   "n": [
+    "CM-8"
+   ],
+   "a": [
+    "ASSET",
+    "AUD"
+   ],
+   "note": ""
+  },
+  {
+   "id": "INC-01",
+   "d": "INC",
+   "t": "Physical security incidents reported formally, logged centrally",
+   "c1": [
+    "7.5.3"
+   ],
+   "c2": [
+    "6.8",
+    "5.24",
+    "5.25"
+   ],
+   "n": [
+    "IR-5",
+    "IR-6"
+   ],
+   "a": [
+    "EMER",
+    "DOC"
+   ],
+   "note": ""
+  },
+  {
+   "id": "INC-02",
+   "d": "INC",
+   "t": "Incident response procedures documented and accessible",
+   "c1": [
+    "7.5"
+   ],
+   "c2": [
+    "5.24",
+    "5.26",
+    "5.37"
+   ],
+   "n": [
+    "IR-1",
+    "IR-4",
+    "IR-8"
+   ],
+   "a": [
+    "EMER",
+    "DOC"
+   ],
+   "note": ""
+  },
+  {
+   "id": "INC-03",
+   "d": "INC",
+   "t": "Incidents investigated to determine root cause and corrective actions",
+   "c1": [
+    "10.2"
+   ],
+   "c2": [
+    "5.27",
+    "5.28"
+   ],
+   "n": [
+    "IR-4"
+   ],
+   "a": [
+    "NC",
+    "EMER"
+   ],
+   "note": ""
+  },
+  {
+   "id": "INC-04",
+   "d": "INC",
+   "t": "Corrective actions tracked to closure and validated",
+   "c1": [
+    "10.1",
+    "10.2"
+   ],
+   "c2": [
+    "5.27"
+   ],
+   "n": [
+    "CA-5",
+    "PM-4"
+   ],
+   "a": [
+    "NC"
+   ],
+   "note": ""
+  },
+  {
+   "id": "INC-05",
+   "d": "INC",
+   "t": "Bcp in place covering physical disruptions",
+   "c1": [
+    "6.1.1",
+    "8.1"
+   ],
+   "c2": [
+    "5.29",
+    "5.30"
+   ],
+   "n": [
+    "CP-1",
+    "CP-2"
+   ],
+   "a": [
+    "EMER"
+   ],
+   "note": "For a full BCMS, ISO 22301 is the dedicated reference."
+  },
+  {
+   "id": "INC-06",
+   "d": "INC",
+   "t": "Critical operations identified and recovery priorities defined",
+   "c1": [
+    "6.1.2"
+   ],
+   "c2": [
+    "5.29",
+    "5.30"
+   ],
+   "n": [
+    "CP-2",
+    "CP-2(8)",
+    "RA-9"
+   ],
+   "a": [
+    "RISK",
+    "EMER"
+   ],
+   "note": ""
+  },
+  {
+   "id": "INC-07",
+   "d": "INC",
+   "t": "Alternate sites or recovery locations physically secured and operationally ready",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "5.29",
+    "5.30",
+    "8.14"
+   ],
+   "n": [
+    "CP-6",
+    "CP-7"
+   ],
+   "a": [
+    "EMER"
+   ],
+   "note": "CP-7 requires controls at the alternate site equivalent to the primary site."
+  },
+  {
+   "id": "INC-08",
+   "d": "INC",
+   "t": "Recovery procedures documented and tested",
+   "c1": [
+    "7.5",
+    "9.1"
+   ],
+   "c2": [
+    "5.29",
+    "5.30"
+   ],
+   "n": [
+    "CP-2",
+    "CP-4",
+    "CP-10"
+   ],
+   "a": [
+    "EMER",
+    "EVAL"
+   ],
+   "note": ""
+  },
+  {
+   "id": "INC-09",
+   "d": "INC",
+   "t": "Regular emergency practise (fire, evacuation, lockdown)",
+   "c1": [
+    "9.1"
+   ],
+   "c2": [
+    "5.24",
+    "7.5"
+   ],
+   "n": [
+    "CP-4",
+    "IR-3"
+   ],
+   "a": [
+    "EMER",
+    "LIFE",
+    "EVAL"
+   ],
+   "note": "Lockdown drills are covered explicitly only by ASIS."
+  },
+  {
+   "id": "INC-10",
+   "d": "INC",
+   "t": "Test result documented and lessons learned incorporated",
+   "c1": [
+    "7.5.3",
+    "10.1",
+    "10.2"
+   ],
+   "c2": [
+    "5.27",
+    "5.30"
+   ],
+   "n": [
+    "CP-4",
+    "IR-3"
+   ],
+   "a": [
+    "NC",
+    "MR"
+   ],
+   "note": ""
+  },
+  {
+   "id": "INC-11",
+   "d": "INC",
+   "t": "Training on incident and emergency preparedness",
+   "c1": [
+    "7.2",
+    "7.3"
+   ],
+   "c2": [
+    "6.3",
+    "5.24"
+   ],
+   "n": [
+    "AT-2",
+    "IR-2",
+    "CP-3"
+   ],
+   "a": [
+    "RES"
+   ],
+   "note": ""
+  },
+  {
+   "id": "INC-12",
+   "d": "INC",
+   "t": "Emergency communication channels tested periodically",
+   "c1": [
+    "7.4",
+    "9.1"
+   ],
+   "c2": [
+    "5.24",
+    "5.29"
+   ],
+   "n": [
+    "CP-4",
+    "CP-8",
+    "IR-3"
+   ],
+   "a": [
+    "COM",
+    "EMER"
+   ],
+   "note": ""
+  },
+  {
+   "id": "INC-13",
+   "d": "INC",
+   "t": "Escalation routes/reporting",
+   "c1": [
+    "7.4"
+   ],
+   "c2": [
+    "5.5",
+    "5.24",
+    "5.25",
+    "6.8"
+   ],
+   "n": [
+    "IR-6",
+    "IR-7",
+    "IR-8"
+   ],
+   "a": [
+    "COM",
+    "EMER"
+   ],
+   "note": ""
+  },
+  {
+   "id": "CHG-01",
+   "d": "CHG",
+   "t": "Physical infrastructure changes subject to formal approval and risk assessment",
+   "c1": [
+    "6.3",
+    "8.1",
+    "8.2"
+   ],
+   "c2": [
+    "8.32",
+    "5.8"
+   ],
+   "n": [
+    "CM-3",
+    "CM-4",
+    "RA-3"
+   ],
+   "a": [
+    "MOC",
+    "RISK"
+   ],
+   "note": ""
+  },
+  {
+   "id": "CHG-02",
+   "d": "CHG",
+   "t": "Security implications evaluated before implementing physical changes",
+   "c1": [
+    "6.3",
+    "8.1"
+   ],
+   "c2": [
+    "8.32",
+    "5.8"
+   ],
+   "n": [
+    "CM-4"
+   ],
+   "a": [
+    "MOC",
+    "RISK"
+   ],
+   "note": ""
+  },
+  {
+   "id": "CHG-03",
+   "d": "CHG",
+   "t": "Changes to access control, layout or security systems --> documentation",
+   "c1": [
+    "7.5"
+   ],
+   "c2": [
+    "8.32",
+    "8.9",
+    "5.37"
+   ],
+   "n": [
+    "CM-2",
+    "CM-3"
+   ],
+   "a": [
+    "MOC",
+    "DOC"
+   ],
+   "note": ""
+  },
+  {
+   "id": "CHG-04",
+   "d": "CHG",
+   "t": "Unauthorized modification of physical security controls pervented",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "8.9",
+    "8.32",
+    "7.3"
+   ],
+   "n": [
+    "CM-5",
+    "PE-3(5)"
+   ],
+   "a": [
+    "MOC",
+    "ACS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "CHG-05",
+   "d": "CHG",
+   "t": "Post-change reviews to verify security effectiveness",
+   "c1": [
+    "9.1"
+   ],
+   "c2": [
+    "8.32"
+   ],
+   "n": [
+    "CM-3(2)",
+    "CM-4(2)"
+   ],
+   "a": [
+    "MOC",
+    "EVAL"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SUB-01",
+   "d": "SUB",
+   "t": "Same physical security requirements as employees?",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "5.19",
+    "5.20",
+    "6.2",
+    "7.2"
+   ],
+   "n": [
+    "PS-7",
+    "SA-9"
+   ],
+   "a": [
+    "SUP"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SUB-02",
+   "d": "SUB",
+   "t": "Third-party physical access granted only after formal authorisation",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "5.18",
+    "5.19",
+    "7.2"
+   ],
+   "n": [
+    "PE-2",
+    "PE-3",
+    "PS-7"
+   ],
+   "a": [
+    "SUP",
+    "ACS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SUB-03",
+   "d": "SUB",
+   "t": "Subcontractor personnel screening/background check before access is granted to secure areas",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "6.1"
+   ],
+   "n": [
+    "PS-3",
+    "PS-7"
+   ],
+   "a": [
+    "SUP"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SUB-04",
+   "d": "SUB",
+   "t": "Third-party activities monitored when on-site",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "5.22",
+    "7.2",
+    "7.6"
+   ],
+   "n": [
+    "PE-3",
+    "PE-6",
+    "PS-7"
+   ],
+   "a": [
+    "SUP",
+    "MON"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SUB-05",
+   "d": "SUB",
+   "t": "Contractural agreements including physical security obligations and controls",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "5.19",
+    "5.20"
+   ],
+   "n": [
+    "SA-4",
+    "SA-9",
+    "PS-7"
+   ],
+   "a": [
+    "SUP"
+   ],
+   "note": ""
+  },
+  {
+   "id": "SUB-06",
+   "d": "SUB",
+   "t": "Subcontractor access rights periodically reviewed and revioked when no longer need",
+   "c1": [
+    "9.1"
+   ],
+   "c2": [
+    "5.18",
+    "5.22",
+    "6.5"
+   ],
+   "n": [
+    "PE-2",
+    "PS-4",
+    "PS-7"
+   ],
+   "a": [
+    "SUP",
+    "ACS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "HOS-01",
+   "d": "HOS",
+   "t": "Hosting environments/zones physically segregated and secured",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.1",
+    "7.3",
+    "7.6"
+   ],
+   "n": [
+    "PE-3",
+    "PE-3(1)",
+    "PE-18"
+   ],
+   "a": [
+    "BAR",
+    "ACS"
+   ],
+   "note": ""
+  },
+  {
+   "id": "HOS-02",
+   "d": "HOS",
+   "t": "Access rights to hosting environments strictly controlled and logged",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "5.18",
+    "7.2",
+    "7.4"
+   ],
+   "n": [
+    "PE-2",
+    "PE-3(1)",
+    "PE-6(4)"
+   ],
+   "a": [
+    "ACS",
+    "MON"
+   ],
+   "note": ""
+  },
+  {
+   "id": "HOS-03",
+   "d": "HOS",
+   "t": "Environmental controls (power, coding, fire supression) redundant and monitored",
+   "c1": [
+    "8.1",
+    "9.1"
+   ],
+   "c2": [
+    "7.5",
+    "7.8",
+    "7.11",
+    "7.12",
+    "8.14"
+   ],
+   "n": [
+    "PE-9",
+    "PE-10",
+    "PE-11",
+    "PE-11(1)",
+    "PE-13",
+    "PE-14",
+    "PE-14(2)"
+   ],
+   "a": [
+    "LIFE",
+    "MON"
+   ],
+   "note": "Requirement text reads 'coding' – interpreted as 'cooling'."
+  },
+  {
+   "id": "HOS-04",
+   "d": "HOS",
+   "t": "Hosting facilities subject to regular security audits and inspections",
+   "c1": [
+    "9.1",
+    "9.2"
+   ],
+   "c2": [
+    "5.22",
+    "5.35",
+    "5.36"
+   ],
+   "n": [
+    "CA-2",
+    "CA-7",
+    "CA-8(3)"
+   ],
+   "a": [
+    "AUD",
+    "EVAL"
+   ],
+   "note": ""
+  },
+  {
+   "id": "HOS-05",
+   "d": "HOS",
+   "t": "Visitor and contractor controls stricter in hosting environments than general facilities",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.2",
+    "7.6"
+   ],
+   "n": [
+    "PE-2(3)",
+    "PE-3(1)",
+    "PE-8"
+   ],
+   "a": [
+    "ACS",
+    "SUP"
+   ],
+   "note": ""
+  },
+  {
+   "id": "HOS-06",
+   "d": "HOS",
+   "t": "Uptime and resilience requirements supported by physical security design",
+   "c1": [
+    "6.1.3",
+    "8.1"
+   ],
+   "c2": [
+    "5.30",
+    "7.11",
+    "8.14"
+   ],
+   "n": [
+    "CP-2",
+    "PE-9",
+    "PE-11",
+    "PE-23",
+    "SA-8"
+   ],
+   "a": [
+    "RISK",
+    "TREAT"
+   ],
+   "note": ""
+  },
+  {
+   "id": "HOS-07",
+   "d": "HOS",
+   "t": "Shared hosting environments logically and physically isolated between tenants",
+   "c1": [
+    "8.1"
+   ],
+   "c2": [
+    "7.3",
+    "7.6",
+    "8.22",
+    "5.23"
+   ],
+   "n": [
+    "PE-3(1)",
+    "SC-7",
+    "SC-32"
+   ],
+   "a": [
+    "BAR",
+    "ACS"
+   ],
+   "note": "Physical isolation (cages/suites) via 7.3 / PE-3(1); logical isolation via 8.22 / SC-7 / SC-32."
+  }
+ ],
+ "t1": {
+  "4.2": "Understanding the needs and expectations of interested parties",
+  "5.1": "Leadership and commitment",
+  "5.2": "Policy",
+  "5.3": "Organizational roles, responsibilities and authorities",
+  "6.1.1": "Actions to address risks and opportunities – General",
+  "6.1.2": "Information security risk assessment",
+  "6.1.3": "Information security risk treatment",
+  "6.2": "Information security objectives and planning to achieve them",
+  "6.3": "Planning of changes",
+  "7.1": "Resources",
+  "7.2": "Competence",
+  "7.3": "Awareness",
+  "7.4": "Communication",
+  "7.5": "Documented information",
+  "7.5.3": "Control of documented information",
+  "8.1": "Operational planning and control",
+  "8.2": "Information security risk assessment (operation)",
+  "8.3": "Information security risk treatment (operation)",
+  "9.1": "Monitoring, measurement, analysis and evaluation",
+  "9.2": "Internal audit",
+  "9.3": "Management review",
+  "10.1": "Continual improvement",
+  "10.2": "Nonconformity and corrective action"
+ },
+ "t2": {
+  "5.1": "Policies for information security",
+  "5.2": "Information security roles and responsibilities",
+  "5.3": "Segregation of duties",
+  "5.4": "Management responsibilities",
+  "5.5": "Contact with authorities",
+  "5.7": "Threat intelligence",
+  "5.8": "Information security in project management",
+  "5.9": "Inventory of information and other associated assets",
+  "5.10": "Acceptable use of information and other associated assets",
+  "5.11": "Return of assets",
+  "5.12": "Classification of information",
+  "5.13": "Labelling of information",
+  "5.15": "Access control",
+  "5.17": "Authentication information",
+  "5.18": "Access rights",
+  "5.19": "Information security in supplier relationships",
+  "5.20": "Addressing information security within supplier agreements",
+  "5.22": "Monitoring, review and change management of supplier services",
+  "5.23": "Information security for use of cloud services",
+  "5.24": "Information security incident management planning and preparation",
+  "5.25": "Assessment and decision on information security events",
+  "5.26": "Response to information security incidents",
+  "5.27": "Learning from information security incidents",
+  "5.28": "Collection of evidence",
+  "5.29": "Information security during disruption",
+  "5.30": "ICT readiness for business continuity",
+  "5.31": "Legal, statutory, regulatory and contractual requirements",
+  "5.33": "Protection of records",
+  "5.34": "Privacy and protection of PII",
+  "5.35": "Independent review of information security",
+  "5.36": "Compliance with policies, rules and standards for information security",
+  "5.37": "Documented operating procedures",
+  "6.1": "Screening",
+  "6.2": "Terms and conditions of employment",
+  "6.3": "Information security awareness, education and training",
+  "6.5": "Responsibilities after termination or change of employment",
+  "6.8": "Information security event reporting",
+  "7.1": "Physical security perimeters",
+  "7.2": "Physical entry",
+  "7.3": "Securing offices, rooms and facilities",
+  "7.4": "Physical security monitoring",
+  "7.5": "Protecting against physical and environmental threats",
+  "7.6": "Working in secure areas",
+  "7.8": "Equipment siting and protection",
+  "7.9": "Security of assets off-premises",
+  "7.10": "Storage media",
+  "7.11": "Supporting utilities",
+  "7.12": "Cabling security",
+  "7.13": "Equipment maintenance",
+  "7.14": "Secure disposal or re-use of equipment",
+  "8.9": "Configuration management",
+  "8.10": "Information deletion",
+  "8.14": "Redundancy of information processing facilities",
+  "8.15": "Logging",
+  "8.16": "Monitoring activities",
+  "8.22": "Segregation of networks",
+  "8.32": "Change management"
+ },
+ "tn": {
+  "AC-6": "Least Privilege",
+  "AT-2": "Literacy Training and Awareness",
+  "AT-3": "Role-based Training",
+  "AT-4": "Training Records",
+  "AU-11": "Audit Record Retention",
+  "AU-6": "Audit Record Review, Analysis, and Reporting",
+  "AU-9": "Protection of Audit Information",
+  "CA-2": "Control Assessments",
+  "CA-5": "Plan of Action and Milestones",
+  "CA-7": "Continuous Monitoring",
+  "CA-8(3)": "Facility Penetration Testing",
+  "CM-2": "Baseline Configuration",
+  "CM-3": "Configuration Change Control",
+  "CM-3(2)": "Testing, Validation, and Documentation of Changes",
+  "CM-4": "Impact Analyses",
+  "CM-4(2)": "Verification of Controls",
+  "CM-5": "Access Restrictions for Change",
+  "CM-8": "System Component Inventory",
+  "CP-1": "Policy and Procedures",
+  "CP-10": "System Recovery and Reconstitution",
+  "CP-2": "Contingency Plan",
+  "CP-2(8)": "Identify Critical Assets",
+  "CP-3": "Contingency Training",
+  "CP-4": "Contingency Plan Testing",
+  "CP-6": "Alternate Storage Site",
+  "CP-7": "Alternate Processing Site",
+  "CP-8": "Telecommunications Services",
+  "IR-1": "Policy and Procedures",
+  "IR-2": "Incident Response Training",
+  "IR-3": "Incident Response Testing",
+  "IR-4": "Incident Handling",
+  "IR-5": "Incident Monitoring",
+  "IR-6": "Incident Reporting",
+  "IR-7": "Incident Response Assistance",
+  "IR-8": "Incident Response Plan",
+  "MP-4": "Media Storage",
+  "MP-6": "Media Sanitization",
+  "PE-1": "Policy and Procedures",
+  "PE-10": "Emergency Shutoff",
+  "PE-11": "Emergency Power",
+  "PE-11(1)": "Alternate Power Supply — Minimal Operational Capability",
+  "PE-12": "Emergency Lighting",
+  "PE-13": "Fire Protection",
+  "PE-13(1)": "Detection Systems — Automatic Activation and Notification",
+  "PE-13(2)": "Suppression Systems — Automatic Activation and Notification",
+  "PE-13(4)": "Inspections",
+  "PE-14": "Environmental Controls",
+  "PE-14(2)": "Monitoring with Alarms and Notifications",
+  "PE-15": "Water Damage Protection",
+  "PE-15(1)": "Automation Support",
+  "PE-16": "Delivery and Removal",
+  "PE-18": "Location of System Components",
+  "PE-2": "Physical Access Authorizations",
+  "PE-2(1)": "Access by Position or Role",
+  "PE-2(3)": "Restrict Unescorted Access",
+  "PE-20": "Asset Monitoring and Tracking",
+  "PE-23": "Facility Location",
+  "PE-3": "Physical Access Control",
+  "PE-3(1)": "System Access",
+  "PE-3(3)": "Continuous Guards",
+  "PE-3(4)": "Lockable Casings",
+  "PE-3(5)": "Tamper Protection",
+  "PE-3(7)": "Physical Barriers",
+  "PE-3(8)": "Access Control Vestibules",
+  "PE-6": "Monitoring Physical Access",
+  "PE-6(1)": "Intrusion Alarms and Surveillance Equipment",
+  "PE-6(2)": "Automated Intrusion Recognition and Responses",
+  "PE-6(3)": "Video Surveillance",
+  "PE-6(4)": "Monitoring Physical Access to Systems",
+  "PE-8": "Visitor Access Records",
+  "PE-8(1)": "Automated Records Maintenance and Review",
+  "PE-9": "Power Equipment and Cabling",
+  "PM-1": "Information Security Program Plan",
+  "PM-2": "Information Security Program Leadership Role",
+  "PM-29": "Risk Management Program Leadership Roles",
+  "PM-3": "Information Security and Privacy Resources",
+  "PM-31": "Continuous Monitoring Strategy",
+  "PM-4": "Plan of Action and Milestones Process",
+  "PM-6": "Measures of Performance",
+  "PM-9": "Risk Management Strategy",
+  "PS-2": "Position Risk Designation",
+  "PS-3": "Personnel Screening",
+  "PS-4": "Personnel Termination",
+  "PS-5": "Personnel Transfer",
+  "PS-7": "External Personnel Security",
+  "PS-9": "Position Descriptions",
+  "RA-1": "Policy and Procedures",
+  "RA-2": "Security Categorization",
+  "RA-3": "Risk Assessment",
+  "RA-7": "Risk Response",
+  "RA-9": "Criticality Analysis",
+  "SA-4": "Acquisition Process",
+  "SA-8": "Security and Privacy Engineering Principles",
+  "SA-9": "External System Services",
+  "SC-32": "System Partitioning",
+  "SC-7": "Boundary Protection",
+  "SI-12": "Information Management and Retention",
+  "SR-12": "Component Disposal"
+ },
+ "ta": {
+  "GOV": "Leadership & governance – management commitment, PAP policy",
+  "ROLE": "Roles, responsibilities & authorities",
+  "CTX": "Context, scope, legal & other requirements",
+  "ASSET": "Asset identification & criticality characterisation",
+  "RISK": "Risk assessment (threat, vulnerability, consequence)",
+  "TREAT": "Risk treatment – PAP objectives & programme",
+  "RES": "Resources, competence, training & awareness",
+  "COM": "Communication & consultation",
+  "DOC": "Documented information & records",
+  "OPS": "Operational control",
+  "BAR": "PPS – Deter/Delay: physical barriers & perimeter",
+  "IDS": "PPS – Detect: intrusion detection & alarm systems",
+  "VSS": "PPS – Detect/Assess: video surveillance systems",
+  "LGT": "PPS – Deter/Detect: security lighting",
+  "ACS": "PPS – Access control (personnel, visitors, vehicles)",
+  "PER": "PPS – Respond: security personnel / officers",
+  "MON": "PPS – Security operations: alarm monitoring, assessment & response",
+  "LIFE": "PPS integration with life-safety & building systems",
+  "EMER": "Incident preparedness, response & recovery",
+  "SUP": "Outsourced services & supply chain (contract security)",
+  "MOC": "Management of change",
+  "EVAL": "Monitoring, measurement & PPS performance testing",
+  "AUD": "Internal audit & evaluation of compliance",
+  "NC": "Nonconformity, corrective & preventive action",
+  "MR": "Management review & continual improvement"
+ }
+}

@@ -1,0 +1,9 @@
+node_modules
+dist
+.node
+src-tauri/target
+src-tauri/gen
+dist-android
+.DS_Store
+.claude
+tests/out
