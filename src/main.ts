@@ -31,6 +31,19 @@ if (window.top !== window.self) { document.body.textContent = 'PhySec Audit cann
 
 setLang(getLang());
 
+// ---------- theme: auto (follows the system) / light / dark ----------
+type Theme = 'auto' | 'light' | 'dark';
+let theme: Theme = 'auto';
+try { const v = localStorage.getItem('psa.theme'); if (v === 'light' || v === 'dark') theme = v; } catch { /* ignore */ }
+function applyTheme(): void {
+  if (theme === 'auto') document.documentElement.removeAttribute('data-theme');
+  else document.documentElement.setAttribute('data-theme', theme);
+  const dark = theme === 'dark' || (theme === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
+  document.querySelector('meta[name=theme-color]')?.setAttribute('content', dark ? '#0F1720' : '#F5F9FD');
+}
+applyTheme();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+
 // ---------- helpers ----------
 const fmtAgo = (ms: number) => {
   if (!ms) return '';
@@ -58,6 +71,7 @@ function topbar(): string {
     <button type="button" class="btn ghost sm" data-act="me" title="${esc(t('yourNameHint'))}">${me ? esc(t('you')) + ': ' + esc(me) : esc(t('setName'))}</button>
     <button type="button" class="btn ghost sm" data-act="backup">${esc(t('backup'))}</button>
     <button type="button" class="btn ghost sm" data-act="home">${esc(t('help'))}</button>
+    <button type="button" class="btn ghost sm" data-act="theme" title="${esc(t('themeHint'))}">${esc(t(theme === 'auto' ? 'themeAuto' : theme === 'light' ? 'themeLight' : 'themeDark'))}</button>
     <button type="button" class="btn sm" data-act="lang">${esc(t('lang'))}</button>
   </div></header>`;
 }
@@ -423,6 +437,11 @@ document.addEventListener('click', async (e) => {
   const tgt = el.closest('button,tr.row') as HTMLElement | null;
   if (!tgt) return;
   const act = tgt.dataset.act;
+  if (act === 'theme') {
+    theme = theme === 'auto' ? 'light' : theme === 'light' ? 'dark' : 'auto';
+    try { if (theme === 'auto') localStorage.removeItem('psa.theme'); else localStorage.setItem('psa.theme', theme); } catch { /* ignore */ }
+    applyTheme(); tgt.textContent = t(theme === 'auto' ? 'themeAuto' : theme === 'light' ? 'themeLight' : 'themeDark'); return;
+  }
   if (act === 'lang') { setLang(getLang() === 'hu' ? 'en' : 'hu'); render(); return; }
   if (act === 'me') { const n = await promptDialog(t('yourName'), t('yourName'), getMe(), t('yourNameHint')); if (n !== null) { setMe(n); render(); } return; }
   if (act === 'backup') { await backupDialog(); return; }

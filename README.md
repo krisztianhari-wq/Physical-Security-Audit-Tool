@@ -21,7 +21,7 @@ Physical security audit tool by <img src="src/assets/sadrobot.png" width="22" al
 - **Import:** read an Excel or CSV file back with a merge (the newer entry wins; rows edited directly in Excel are taken over).
 - **Backup and restore:** all audits in one JSON file, which can be restored on another device.
 - **Start page** that explains the tool and the four steps in plain words.
-- **Hungarian and English UI**, light and dark mode, from phone to desktop.
+- **Hungarian and English UI**, light and dark mode (follows the system by default, or pick one with the *Theme* button in the header), from phone to desktop.
 
 ## Privacy
 
