@@ -88,23 +88,32 @@ function renderList(): void {
   const all = listAudits();
   const q = L.q.trim().toLowerCase();
   const items = all.filter((a) => (!L.st || a.status === L.st) && (!q || `${a.subject} ${a.lead} ${a.location}`.toLowerCase().includes(q)));
-  const chip = (v: '' | 'open' | 'closed', lab: string) => `<button type="button" class="chip-btn" data-lst="${v}" aria-pressed="${L.st === v}">${esc(lab)}</button>`;
+  const nOpen = all.filter((a) => a.status === 'open').length;
+  const chip = (v: '' | 'open' | 'closed', lab: string, n: number) => `<button type="button" class="chip-btn" data-lst="${v}" aria-pressed="${L.st === v}">${esc(lab)} <span class="cnt">${n}</span></button>`;
   const cards = items.map((a) => {
     const c = counts(a); const done = c.total - c[''];
     return `<button type="button" class="card acard" data-open="${esc(a.id)}">
       <div class="acard-h"><b>${esc(a.subject)}</b><span class="badge ${a.status === 'closed' ? 'b-closed' : 'b-open'}">${esc(auditStatusLabel(a.status))}</span></div>
       <div class="muted small">${esc([a.date, a.lead, a.location].filter(Boolean).join(' · '))}</div>
-      ${seg(c)}
+      <div class="acard-p"><span class="pct">${Math.round((done / c.total) * 100)}%</span>${seg(c)}</div>
       <div class="small">${done}/${c.total} ${esc(t('assessed'))} · <span class="t-n">${c.n} ${esc(stLabel('n'))}</span> · <span class="t-p">${c.p} ${esc(stLabel('p'))}</span> · <span class="t-c">${c.c} ${esc(stLabel('c'))}</span></div>
       <div class="muted xs">${esc(t('lastChange'))}: ${esc(fmtAgo(a.updatedAt))}</div></button>`;
   }).join('');
-  app.innerHTML = topbar() + `<main>
-    <div class="top"><div><h1>${esc(t('audits'))}</h1><div class="sub">${esc(t('auditsSub'))}</div></div>
-      <button type="button" class="btn primary" data-act="new">${esc(t('newAudit'))}</button></div>
+  const newCard = !q && L.st !== 'closed' ? `<button type="button" class="card newcard" data-act="new"><span class="plus">+</span><b>${esc(t('newAuditBig'))}</b><span class="muted small">${esc(t('newCardHint'))}</span></button>` : '';
+  const empty = !all.length
+    ? `<section class="card emptybig"><img class="hero-icon sm" src="${appIcon}" alt=""><h2>${esc(t('noAuditsTitle'))}</h2><p>${esc(t('noAudits'))}</p>
+        <button type="button" class="btn primary big" data-act="new">+ ${esc(t('newAuditBig'))}</button></section>`
+    : '';
+  app.innerHTML = topbar() + `<main class="home">
+    <section class="hero list-hero">
+      <div><h1>${esc(t('audits'))}</h1><p class="lead">${esc(t('auditsSub'))}</p>
+        ${all.length ? `<p class="muted small">${all.length} ${esc(t('auditsTotal'))} · ${nOpen} ${esc(t('open').toLowerCase())}</p>` : ''}</div>
+      <button type="button" class="btn primary big" data-act="new">+ ${esc(t('newAuditBig'))}</button>
+    </section>
     ${storageAvailable() ? '' : `<div class="banner warn">${esc(t('storageWarn'))}</div>`}
-    <div class="tools"><input class="q" type="search" id="lq" value="${esc(L.q)}" placeholder="${esc(t('search'))}" aria-label="${esc(t('search'))}">
-      ${chip('', t('all'))}${chip('open', t('open'))}${chip('closed', t('closed'))}</div>
-    <div class="agrid">${cards || `<p class="empty">${esc(all.length ? t('noMatch') : t('noAudits'))}</p>`}</div>
+    ${all.length ? `<div class="tools"><input class="q" type="search" id="lq" value="${esc(L.q)}" placeholder="${esc(t('search'))}" aria-label="${esc(t('search'))}">
+      ${chip('', t('all'), all.length)}${chip('open', t('open'), nOpen)}${chip('closed', t('closed'), all.length - nOpen)}</div>
+    <div class="agrid">${newCard}${cards || `<p class="empty">${esc(t('noMatch'))}</p>`}</div>` : empty}
   </main>${foot()}`;
 }
 
