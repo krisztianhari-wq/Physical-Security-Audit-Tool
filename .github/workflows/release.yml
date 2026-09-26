@@ -117,7 +117,14 @@ jobs:
           NDK_HOME: ${{ env.ANDROID_HOME }}/ndk/27.2.12479018
         run: npx tauri android init
       - name: Keep audit data out of Android cloud / device-transfer backups
-        run: sed -i 's/android:allowBackup="true"/android:allowBackup="false"/' src-tauri/gen/android/app/src/main/AndroidManifest.xml && grep -o 'android:allowBackup="[a-z]*"' src-tauri/gen/android/app/src/main/AndroidManifest.xml
+        run: |
+          M=src-tauri/gen/android/app/src/main/AndroidManifest.xml
+          if grep -q 'android:allowBackup' "$M"; then
+            sed -i 's/android:allowBackup="true"/android:allowBackup="false"/' "$M"
+          else
+            sed -i '0,/<application/s//<application android:allowBackup="false"/' "$M"
+          fi
+          grep -o 'android:allowBackup="false"' "$M"
       - name: Generate app icons (Android uses the smaller drawing)
         run: bash scripts/gen-icons.sh
       - name: Build release APK (arm64)
