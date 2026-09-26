@@ -24,7 +24,7 @@ function header(a: Audit): string {
 }
 
 function footer(a: Audit): string {
-  return `<div class="r-foot"><span>${esc(t('confidential'))} · ${esc(t('reportTitle'))} · ${esc(a.subject)}</span><span class="r-pno"></span></div>`;
+  return `<div class="r-foot"><span>${esc(t('confidential'))} · ${esc(t('reportTitle'))} · ${esc(a.subject)}</span><span>${esc(t('rightsShort'))}</span><span class="r-pno"></span></div>`;
 }
 
 function summaryPage(a: Audit): string {

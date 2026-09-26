@@ -61,4 +61,6 @@ npx tauri ios init && npx tauri ios build
 
 <img src="src/assets/sadrobot.png" width="40" alt="sadrobot">
 
-MIT © 2026 sadrobot
+© 2026 sadrobot. All rights reserved – see [LICENSE](LICENSE) (English and Hungarian).
+The published app (web app, installers, APK) may be used free of charge for your own non-commercial use; your audit data and reports are yours.
+Copying, modifying, redistributing or reusing the code, the requirement catalogue, the design or the logos requires prior written permission from sadrobot.

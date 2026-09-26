@@ -76,7 +76,7 @@ function topbar(): string {
   </div></header>`;
 }
 
-const foot = () => `<footer class="foot"><img class="sricon" src="${srIcon}" alt=""><span>sadrobot · PhySec Audit v${__APP_VERSION__}</span></footer>`;
+const foot = () => `<footer class="foot"><img class="sricon" src="${srIcon}" alt=""><span>sadrobot · PhySec Audit v${__APP_VERSION__}</span><span class="rights">${esc(t('rights'))}</span></footer>`;
 
 // ---------- start page ----------
 function renderHome(): void {

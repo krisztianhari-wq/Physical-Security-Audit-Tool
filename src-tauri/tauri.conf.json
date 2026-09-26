@@ -31,7 +31,7 @@
     "active": true,
     "targets": ["dmg", "nsis", "msi"],
     "category": "Business",
-    "copyright": "© 2026 sadrobot",
+    "copyright": "© 2026 sadrobot. All rights reserved.",
     "shortDescription": "Physical security audit tool",
     "longDescription": "PhySec Audit – physical security audits against ISO 27001, ISO 27002 / Annex A, NIST SP 800-53 r5 and ASIS PAP-2021. PDF report and Excel workbook at the end of each audit. Data stays on the device. UI in Hungarian and English.",
     "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"],

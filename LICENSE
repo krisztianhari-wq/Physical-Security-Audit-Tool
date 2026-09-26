@@ -1,21 +1,114 @@
-MIT License
+PhySec Audit – Licence / Licenc
+Copyright (c) 2026 sadrobot. All rights reserved. / Minden jog fenntartva.
 
-Copyright (c) 2026 sadrobot
+The English and the Hungarian texts below are equivalent.
+Az alábbi angol és magyar szöveg egyenértékű.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+==============================================================================
+ENGLISH
+==============================================================================
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. Ownership
+   The PhySec Audit software – its source code, requirement catalogue and
+   framework mappings, user interface, PDF and Excel report design, texts,
+   graphics, icons and the sadrobot name and logo – is the property of
+   sadrobot and is protected by copyright. ISO, NIST and ASIS are the names
+   of their respective owners; the catalogue refers to their standards by
+   clause and control number only.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. What you may do without asking
+   You may use the official published builds – the web app at
+   https://krisztianhari-wq.github.io/Physical-Security-Audit-Tool/ and the
+   installers and APK on the project's GitHub Releases page – free of
+   charge, for your own non-commercial use. You may view the source code on
+   GitHub. The audit data you enter and the reports the app creates from it
+   are yours.
+
+3. What needs prior written permission from sadrobot
+   Anything else, in particular:
+   a) copying, modifying, adapting or translating the source code or any
+      part of it, including the requirement catalogue and the mappings;
+   b) publishing, distributing, selling, renting or sublicensing the
+      software, a modified version or any work derived from it;
+   c) building any part of it (code, catalogue, design, graphics, icons)
+      into another product, app, website or service;
+   d) any commercial use, including use in paid audits, consulting,
+      courses, trainings or services;
+   e) using the sadrobot name or logo.
+   Viewing or forking the repository on GitHub does not grant any of these
+   rights.
+
+4. Asking for permission
+   Open an issue at
+   https://github.com/krisztianhari-wq/Physical-Security-Audit-Tool or
+   contact the author through the GitHub profile krisztianhari-wq.
+   Permission is valid only in writing.
+
+5. Third-party components
+   The software uses open-source components (among others Vite,
+   vite-plugin-pwa, jsPDF, html-to-image and Tauri). Those components
+   remain under their own licences; this licence does not restrict them.
+
+6. No warranty, no liability
+   The software is provided "as is", without any warranty. It does not
+   replace a qualified auditor, professional judgement or a formal
+   certification audit, and its results do not prove compliance with any
+   standard. To the extent permitted by law, sadrobot is not liable for any
+   damage or loss arising from the use of the software, including lost
+   audit data.
+
+==============================================================================
+MAGYAR
+==============================================================================
+
+1. Tulajdonjog
+   A PhySec Audit szoftver – forráskódja, követelménykatalógusa és
+   keretrendszer-megfeleltetései, felhasználói felülete, PDF- és
+   Excel-riportjainak designja, szövegei, grafikái, ikonjai, valamint a
+   sadrobot név és logó – a sadrobot tulajdona, és szerzői jogi védelem
+   alatt áll. Az ISO, a NIST és az ASIS név a saját tulajdonosaiké; a
+   katalógus a szabványaikra csak pont- és kontrollszámmal hivatkozik.
+
+2. Amit engedély nélkül megtehetsz
+   A hivatalosan kiadott változatokat – a webes appot a
+   https://krisztianhari-wq.github.io/Physical-Security-Audit-Tool/ címen,
+   valamint a projekt GitHub Releases oldalán közzétett telepítőket és
+   APK-t – ingyenesen használhatod saját, nem kereskedelmi célra.
+   A forráskódot a GitHubon megtekintheted. Az általad rögzített
+   auditadatok és az ezekből készült riportok a tieid.
+
+3. Amihez a sadrobot előzetes írásos engedélye kell
+   Minden más, különösen:
+   a) a forráskód vagy bármely része – ideértve a követelménykatalógust és
+      a megfeleltetéseket – másolása, módosítása, átdolgozása vagy
+      fordítása;
+   b) a szoftver, egy módosított változata vagy abból származó mű
+      közzététele, terjesztése, értékesítése, bérbeadása vagy
+      továbblicencelése;
+   c) bármely részének (kód, katalógus, design, grafika, ikon) beépítése más
+      termékbe, alkalmazásba, weboldalba vagy szolgáltatásba;
+   d) bármilyen kereskedelmi felhasználás, ideértve a fizetős auditokban,
+      tanácsadásban, tanfolyamokon, képzéseken vagy szolgáltatásokban való
+      használatot;
+   e) a sadrobot név vagy logó használata.
+   A repó GitHubon való megtekintése vagy forkolása ezen jogok egyikét sem
+   adja meg.
+
+4. Engedélykérés
+   Nyiss egy issue-t a
+   https://github.com/krisztianhari-wq/Physical-Security-Audit-Tool
+   oldalon, vagy keresd a szerzőt a krisztianhari-wq GitHub-profilon
+   keresztül. Engedély csak írásban érvényes.
+
+5. Harmadik féltől származó összetevők
+   A szoftver nyílt forráskódú összetevőket használ (többek között Vite,
+   vite-plugin-pwa, jsPDF, html-to-image és Tauri). Ezekre a saját
+   licencük vonatkozik; ez a licenc nem korlátozza őket.
+
+6. Garancia és felelősség kizárása
+   A szoftver „ahogy van” állapotban, mindenféle garancia nélkül érhető el.
+   Nem helyettesíti a képzett auditort, a szakmai megítélést és a formális
+   tanúsítási auditot, eredményei nem igazolják egyetlen szabványnak való
+   megfelelést sem. A jogszabályok által megengedett mértékig a sadrobot
+   nem felel a szoftver használatából eredő semmilyen kárért vagy
+   veszteségért, ideértve az auditadatok elvesztését is.

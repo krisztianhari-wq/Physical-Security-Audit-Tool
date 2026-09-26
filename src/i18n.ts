@@ -74,6 +74,8 @@ const HU = {
   lastReq: 'Ez volt az utolsó követelmény.', discardNotes: 'A jegyzet nincs mentve. Elveted?', discard: 'Elvetés',
   helpText: 'Hozz létre egy auditot, értékeld a követelményeket (állapot, felelős, bizonyíték), majd zárd le. Lezáráskor az app PDF-jelentést és Excel-táblázatot készít, amelyeket a gépedre menthetsz. Minden adat csak ezen az eszközön tárolódik.',
   footer: 'sadrobot · PhySec Audit',
+  rightsShort: '© 2026 sadrobot · minden jog fenntartva',
+  rights: '© 2026 sadrobot · minden jog fenntartva · a kód, a katalógus, a design és a logók csak engedéllyel használhatók',
 };
 
 type Dict = typeof HU;
@@ -151,6 +153,8 @@ const EN: Dict = {
   lastReq: 'This was the last requirement.', discardNotes: 'The notes are not saved. Discard them?', discard: 'Discard',
   helpText: 'Create an audit, assess the requirements (status, owner, evidence), then close it. On closing, the app creates a PDF report and an Excel workbook that you can save on your device. All data stays on this device.',
   footer: 'sadrobot · PhySec Audit',
+  rightsShort: '© 2026 sadrobot · all rights reserved',
+  rights: '© 2026 sadrobot · all rights reserved · code, catalogue, design and logos may be used only with permission',
 };
 
 const DOM_HU: Record<string, string> = {
