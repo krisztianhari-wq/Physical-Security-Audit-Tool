@@ -30,7 +30,6 @@ Fizikai biztonsági audit eszköz (85 követelmény × ISO 27001 / 27002 / NIST 
 
 ## Buktatók
 - Az npm `@tauri-apps/*` `~2.11`-re van rögzítve, hogy egyezzen a Rust tauri 2.11.x-szel – eltérésnél a `tauri build` leáll.
-- A 5177-es portot egy másik projekt globális launch configja is használja – egyszerre nem futhatnak.
 - A v0.1.0 újrafuttatásánál az APK csatolása elbukott („Resource not accessible by integration”); a v0.1.1-ben megvan – figyelmen kívül hagyható.
 
 ## Nyitott
