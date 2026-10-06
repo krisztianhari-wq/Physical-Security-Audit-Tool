@@ -7,3 +7,4 @@ dist-android
 .DS_Store
 .claude
 tests/out
+CLAUDE.local.md
